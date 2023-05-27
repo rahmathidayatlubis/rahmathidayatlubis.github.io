@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.045c3237.css",
+    "main.js": "/static/js/main.5e10f83d.js",
+    "static/js/787.a7249224.chunk.js": "/static/js/787.a7249224.chunk.js",
+    "static/media/js-dasar.png": "/static/media/js-dasar.a122689a1923d576d254.png",
+    "static/media/profile.png": "/static/media/profile.a01a2289938bf24f6946.png",
+    "static/media/logo.svg": "/static/media/logo.bba63c759c3e6abe565c79a721303680.svg",
+    "static/media/php.png": "/static/media/php.0a564540c19c7189202e.png",
+    "static/media/react.svg": "/static/media/react.e27571eaed899c642345e71163624ef9.svg",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/git.svg": "/static/media/git.fd381642a8b14fec88b8d6df1ff25220.svg",
+    "static/media/javascript.svg": "/static/media/javascript.fd46ca41839433d73577989d86eb2fe2.svg",
+    "static/media/curve-hr.svg": "/static/media/curve-hr.16b9fca607ca7942b81f2887bc2dae79.svg",
+    "static/media/tailwind.svg": "/static/media/tailwind.50fbcf516b9a3774e9a83272167059ae.svg",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/express.svg": "/static/media/express.ea97b712340ffb8f11d85ccb96309507.svg",
+    "static/media/windows.svg": "/static/media/windows.680a11acd0ab401f69e83c7caba17dc0.svg",
+    "index.html": "/index.html",
+    "main.045c3237.css.map": "/static/css/main.045c3237.css.map",
+    "main.5e10f83d.js.map": "/static/js/main.5e10f83d.js.map",
+    "787.a7249224.chunk.js.map": "/static/js/787.a7249224.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.045c3237.css",
+    "static/js/main.5e10f83d.js"
+  ]
+}
