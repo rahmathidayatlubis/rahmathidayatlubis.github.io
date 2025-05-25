@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rahmat Hidayat Lubis - Web Developer Portfolio</title>
+    <meta
+      name="description"
+      content="Portofolio [Rahmat Hidayat Lubis], seorang Web Developer ahli CodeIgniter, Laravel, dan MySQL, dengan fokus pada proyek mahasiswa dan desain minimalis."
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              heading: ["Poppins", "sans-serif"],
+            },
+            colors: {
+              "manga-black": "#1a1a1a",
+              "manga-white": "#f8f8f8",
+              "manga-accent": "oklch(14.1% 0.005 285.823)",
+              "manga-border": "#333333",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      .glass-effect {
+        background: rgba(248, 248, 248, 0.6);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+      }
+
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .fade-in-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .skill-icon {
+        filter: grayscale(100%);
+        transition: filter 0.3s ease;
+      }
+      .skill-icon:hover {
+        filter: grayscale(0%);
+      }
+
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f8f8f8;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      .hero-panel {
+        border-bottom: 3px solid #1a1a1a;
+      }
+    </style>
+  </head>
+
+  <body class="bg-manga-white text-manga-black font-sans antialiased">
+    <header class="sticky top-0 z-50 w-full glass-effect">
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="#" class="flex items-center group">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="text-manga-black group-hover:text-manga-accent transition duration-200 mr-2"
+          >
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+            <line x1="12" y1="4" x2="12" y2="20"></line>
+          </svg>
+          <span
+            class="font-heading text-2xl font-extrabold text-manga-black tracking-tighter group-hover:text-manga-accent transition duration-200"
+          >
+            RAHMAT HIDAYAT LUBIS
+          </span>
+        </a>
+
+        <ul class="hidden md:flex items-center space-x-8 font-medium">
+          <li>
+            <a
+              href="#about"
+              class="hover:text-manga-accent transition duration-200 border-b-2 border-transparent hover:border-manga-accent pb-1"
+              data-en="About"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#skills"
+              class="hover:text-manga-accent transition duration-200 border-b-2 border-transparent hover:border-manga-accent pb-1"
+              data-en="Skills"
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="hover:text-manga-accent transition duration-200 border-b-2 border-transparent hover:border-manga-accent pb-1"
+              data-en="Projects"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="bg-manga-black text-manga-white px-5 py-2 hover:bg-manga-accent transition duration-300"
+              data-en="Contact Me"
+              >Contact Me</a
+            >
+          </li>
+          <li>
+            <button
+              id="lang-switcher"
+              class="focus:outline-none text-2xl"
+              title="Switch Language"
+            ></button>
+          </li>
+        </ul>
+
+        <div class="md:hidden flex items-center space-x-4">
+          <button
+            id="lang-switcher-mobile"
+            class="focus:outline-none text-2xl"
+            title="Switch Language"
+          ></button>
+          <button id="mobile-menu-button" class="focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
+        <ul class="flex flex-col space-y-4 font-medium">
+          <li>
+            <a
+              href="#about"
+              class="block py-2 hover:text-manga-accent transition duration-200"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#skills"
+              class="block py-2 hover:text-manga-accent transition duration-200"
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="block py-2 hover:text-manga-accent transition duration-200"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="block py-2 bg-manga-black text-manga-white px-4 text-center hover:bg-manga-accent transition duration-300"
+              >Contact Me</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-16 md:py-24">
+      <section
+        id="hero"
+        class="min-h-[80vh] flex items-center hero-panel mb-24"
+      >
+        <div class="w-full text-center md:text-left fade-in-up">
+          <h1
+            class="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-6 leading-none tracking-tighter"
+          >
+            <span>WEB DEVELOPER</span><br />
+            <span>WITH </span
+            ><span class="text-transparent [-webkit-text-stroke:2px_#1a1a1a]"
+              >CODE</span
+            ><span> & </span
+            ><span class="text-transparent [-webkit-text-stroke:2px_#1a1a1a]"
+              >CREATIVITY</span
+            >.
+          </h1>
+          <p
+            class="text-lg md:text-xl mb-10 max-w-xl mx-auto md:mx-0 text-gray-600"
+          >
+            IT Student, expert in Laravel & CodeIgniter, turning complex ideas
+            into clean, functional web apps.
+          </p>
+          <a
+            href="#projects"
+            class="inline-block bg-manga-black text-manga-white px-10 py-4 font-bold border-2 border-manga-black hover:bg-manga-white hover:text-manga-black transition duration-300 transform hover:scale-105"
+          >
+            SEE MY WORK ✒️
+          </a>
+        </div>
+      </section>
+
+      <section
+        id="about"
+        class="mb-24 scroll-mt-24 border-b border-gray-300 pb-16 fade-in-up"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-start">
+          <div class="md:col-span-2">
+            <h2
+              class="font-heading text-3xl md:text-4xl font-extrabold mb-4 sticky top-28"
+            >
+              About Me.
+            </h2>
+          </div>
+          <div
+            class="md:col-span-3 text-base md:text-lg leading-relaxed text-gray-700 space-y-5"
+          >
+            <p>
+              Hello! I'm
+              <strong class="text-manga-black">Rahmat Hidayat Lubis</strong>, an
+              enthusiastic web developer from Royal University with an academic
+              background in Information Systems. I have a strong passion for
+              designing efficient and elegant digital solutions.
+            </p>
+            <p>
+              My main focus is on <em>backend</em> development using
+              <strong class="text-manga-black">PHP</strong>, with in-depth
+              knowledge of the
+              <strong class="text-manga-black">Laravel</strong> and
+              <strong class="text-manga-black">CodeIgniter</strong> frameworks.
+              I’m also proficient in using
+              <strong class="text-manga-black">MySQL</strong> to design and
+              manage reliable, well-structured databases.
+            </p>
+            <p>
+              On the <em>frontend</em> side, I have experience using
+              <strong class="text-manga-black">JavaScript</strong> to build
+              interactive features, and I’m currently exploring
+              <strong class="text-manga-black">Tailwind CSS</strong> to
+              implement modern, responsive styling. Additionally, I have basic
+              knowledge of <strong class="text-manga-black">Java</strong>.
+            </p>
+            <p>
+              Throughout my journey as a student, I have successfully completed
+              various <strong class="text-manga-black">projects</strong>, both
+              for academic assignments and <em>freelance</em> work, which have
+              enriched my hands-on experience in tackling diverse web
+              development challenges. I value writing <em>clean</em>,
+              well-structured, and maintainable code.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="mb-24 scroll-mt-24 fade-in-up">
+        <h2
+          class="font-heading text-3xl md:text-4xl font-extrabold text-center mb-16"
+        >
+          Skills.
+        </h2>
+        <div
+          class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 text-center"
+        >
+          <div
+            class="p-6 border border-manga-border/50 hover:border-manga-border hover:shadow-xl transition-all duration-300 rounded-lg"
+          >
+            <img
+              src="https://cdn.svgporn.com/logos/laravel.svg"
+              alt="Laravel"
+              class="h-16 mx-auto mb-4 skill-icon"
+            />
+            <h3 class="font-bold text-lg text-manga-black">Laravel</h3>
+          </div>
+          <div
+            class="p-6 border border-manga-border/50 hover:border-manga-border hover:shadow-xl transition-all duration-300 rounded-lg"
+          >
+            <img
+              src="https://cdn.svgporn.com/logos/codeigniter-icon.svg"
+              alt="CodeIgniter"
+              class="h-16 mx-auto mb-4 skill-icon"
+            />
+            <h3 class="font-bold text-lg text-manga-black">CodeIgniter</h3>
+          </div>
+          <div
+            class="p-6 border border-manga-border/50 hover:border-manga-border hover:shadow-xl transition-all duration-300 rounded-lg"
+          >
+            <img
+              src="https://cdn.svgporn.com/logos/mysql.svg"
+              alt="MySQL"
+              class="h-16 mx-auto mb-4 skill-icon"
+            />
+            <h3 class="font-bold text-lg text-manga-black">MySQL</h3>
+          </div>
+          <div
+            class="p-6 border border-manga-border/50 hover:border-manga-border hover:shadow-xl transition-all duration-300 rounded-lg"
+          >
+            <img
+              src="https://cdn.svgporn.com/logos/php.svg"
+              alt="PHP"
+              class="h-16 mx-auto mb-4 skill-icon"
+            />
+            <h3 class="font-bold text-lg text-manga-black">PHP</h3>
+          </div>
+          <div
+            class="p-6 border border-manga-border/50 hover:border-manga-border hover:shadow-xl transition-all duration-300 rounded-lg"
+          >
+            <img
+              src="https://cdn.svgporn.com/logos/javascript.svg"
+              alt="JavaScript"
+              class="h-16 mx-auto mb-4 skill-icon"
+            />
+            <h3 class="font-bold text-lg text-manga-black">JavaScript</h3>
+          </div>
+          <div
+            class="p-6 border border-manga-border/50 hover:border-manga-border hover:shadow-xl transition-all duration-300 rounded-lg"
+          >
+            <img
+              src="https://cdn.svgporn.com/logos/html-5.svg"
+              alt="HTML5"
+              class="h-16 mx-auto mb-4 skill-icon"
+            />
+            <h3 class="font-bold text-lg text-manga-black">HTML5</h3>
+          </div>
+          <div
+            class="p-6 border border-manga-border/50 hover:border-manga-border hover:shadow-xl transition-all duration-300 rounded-lg"
+          >
+            <img
+              src="https://cdn.svgporn.com/logos/tailwindcss-icon.svg"
+              alt="Tailwind CSS"
+              class="h-16 mx-auto mb-4 skill-icon"
+            />
+            <h3 class="font-bold text-lg text-manga-black">Tailwind CSS</h3>
+          </div>
+          <div
+            class="p-6 border border-manga-border/50 hover:border-manga-border hover:shadow-xl transition-all duration-300 rounded-lg"
+          >
+            <img
+              src="https://cdn.svgporn.com/logos/java.svg"
+              alt="Java"
+              class="h-16 mx-auto mb-4 skill-icon"
+            />
+            <h3 class="font-bold text-lg text-manga-black">Java</h3>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="mb-24 scroll-mt-24 fade-in-up">
+        <h2
+          class="font-heading text-3xl md:text-4xl font-extrabold text-center mb-16"
+        >
+          Projects.
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="border border-manga-border/50 p-6 transition-all duration-300 hover:shadow-2xl hover:border-manga-accent group relative overflow-hidden h-60 flex flex-col justify-between rounded-lg"
+          >
+            <div
+              class="absolute inset-0 bg-manga-black text-manga-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-in-out z-10"
+            >
+              <p class="text-sm text-center mb-6">
+                Library Information System complete with member management,
+                catalog, and borrowing system.
+              </p>
+              <a
+                href="#"
+                class="inline-block bg-manga-accent text-manga-white px-5 py-2 text-sm font-bold border-2 border-manga-white hover:bg-white hover:text-slate-900 hover:text-manga-white transition"
+                >View Details →</a
+              >
+            </div>
+            <div>
+              <h3 class="font-heading text-xl font-bold mb-2 text-manga-black">
+                Library Info System
+              </h3>
+              <p class="text-sm mb-4 text-gray-600">
+                Manajemen buku & anggota.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gray-200 text-xs px-3 py-1 rounded-full"
+                >Laravel</span
+              >
+              <span class="bg-gray-200 text-xs px-3 py-1 rounded-full"
+                >MySQL</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="border border-manga-border/50 p-6 transition-all duration-300 hover:shadow-2xl hover:border-manga-accent group relative overflow-hidden h-60 flex flex-col justify-between rounded-lg"
+          >
+            <div
+              class="absolute inset-0 bg-manga-black text-manga-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-in-out z-10"
+            >
+              <p class="text-sm text-center mb-6">
+                Light and fast Point-of-Sale (POS) application for MSMEs built
+                with CodeIgniter 4.
+              </p>
+              <a
+                href="#"
+                class="inline-block bg-manga-accent text-manga-white px-5 py-2 text-sm font-bold border-2 border-manga-white hover:bg-white hover:text-slate-900 hover:text-manga-white transition"
+                >View Details →</a
+              >
+            </div>
+            <div>
+              <h3 class="font-heading text-xl font-bold mb-2 text-manga-black">
+                Aplikasi Kasir (POS)
+              </h3>
+              <p class="text-sm mb-4 text-gray-600">
+                Cashier solution for MSMEs.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gray-200 text-xs px-3 py-1 rounded-full"
+                >CodeIgniter</span
+              >
+              <span class="bg-gray-200 text-xs px-3 py-1 rounded-full"
+                >jQuery</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="border border-manga-border/50 p-6 transition-all duration-300 hover:shadow-2xl hover:border-manga-accent group relative overflow-hidden h-60 flex flex-col justify-between rounded-lg"
+          >
+            <div
+              class="absolute inset-0 bg-manga-black text-manga-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-in-out z-10"
+            >
+              <p class="text-sm text-center mb-6">
+                Modern company profile website with responsive design using
+                Laravel & Tailwind.
+              </p>
+              <a
+                href="#"
+                class="inline-block bg-manga-accent text-manga-white px-5 py-2 text-sm font-bold border-2 border-manga-white hover:bg-white hover:text-slate-900 hover:text-manga-white transition"
+                >View Details →</a
+              >
+            </div>
+            <div>
+              <h3 class="font-heading text-xl font-bold mb-2 text-manga-black">
+                Company Profile XYZ
+              </h3>
+              <p class="text-sm mb-4 text-gray-600">Modern digital profile.</p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gray-200 text-xs px-3 py-1 rounded-full"
+                >Laravel</span
+              >
+              <span class="bg-gray-200 text-xs px-3 py-1 rounded-full"
+                >Tailwind</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="border border-manga-border/50 p-6 transition-all duration-300 hover:shadow-2xl hover:border-manga-accent group relative overflow-hidden h-60 flex flex-col justify-between rounded-lg"
+          >
+            <div
+              class="absolute inset-0 bg-manga-black text-manga-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-in-out z-10"
+            >
+              <p class="text-sm text-center mb-6">
+                Personal blog with a custom simple content management system
+                (CMS).
+              </p>
+              <a
+                href="#"
+                class="inline-block bg-manga-accent text-manga-white px-5 py-2 text-sm font-bold border-2 border-manga-white hover:bg-white hover:text-slate-900 hover:text-manga-white transition"
+                >View Details →</a
+              >
+            </div>
+            <div>
+              <h3 class="font-heading text-xl font-bold mb-2 text-manga-black">
+                Personal Blog Platform
+              </h3>
+              <p class="text-sm mb-4 text-gray-600">Simple CMS.</p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gray-200 text-xs px-3 py-1 rounded-full"
+                >PHP Native</span
+              >
+              <span class="bg-gray-200 text-xs px-3 py-1 rounded-full">JS</span>
+            </div>
+          </div>
+
+          <div
+            class="border border-manga-border/50 p-6 transition-all duration-300 hover:shadow-2xl hover:border-manga-accent group relative overflow-hidden h-60 flex flex-col justify-between rounded-lg"
+          >
+            <div
+              class="absolute inset-0 bg-manga-black text-manga-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-in-out z-10"
+            >
+              <p class="text-sm text-center mb-6">
+                Inventory tracking application for campus laboratory equipment.
+              </p>
+              <a
+                href="#"
+                class="inline-block bg-manga-accent text-manga-white px-5 py-2 text-sm font-bold border-2 border-manga-white hover:bg-white hover:text-slate-900 hover:text-manga-white transition"
+                >View Details →</a
+              >
+            </div>
+            <div>
+              <h3 class="font-heading text-xl font-bold mb-2 text-manga-black">
+                Lab Inventory System
+              </h3>
+              <p class="text-sm mb-4 text-gray-600">Asset management.</p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gray-200 text-xs px-3 py-1 rounded-full"
+                >CodeIgniter</span
+              >
+              <span class="bg-gray-200 text-xs px-3 py-1 rounded-full"
+                >MySQL</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="border border-manga-border/50 p-6 transition-all duration-300 hover:shadow-2xl hover:border-manga-accent group relative overflow-hidden h-60 flex flex-col justify-between rounded-lg"
+          >
+            <div
+              class="absolute inset-0 bg-manga-black text-manga-white p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-in-out z-10"
+            >
+              <p class="text-sm text-center mb-6">
+                Interactive landing page for campus event with JS animation.
+              </p>
+              <a
+                href="#"
+                class="inline-block bg-manga-accent text-manga-white px-5 py-2 text-sm font-bold border-2 border-manga-white hover:bg-white hover:text-slate-900 hover:text-manga-white transition"
+                >View Details →</a
+              >
+            </div>
+            <div>
+              <h3 class="font-heading text-xl font-bold mb-2 text-manga-black">
+                Event Landing Page
+              </h3>
+              <p class="text-sm mb-4 text-gray-600">Campus event promotion.</p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gray-200 text-xs px-3 py-1 rounded-full"
+                >HTML</span
+              >
+              <span class="bg-gray-200 text-xs px-3 py-1 rounded-full"
+                >Tailwind</span
+              >
+              <span class="bg-gray-200 text-xs px-3 py-1 rounded-full">JS</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        class="scroll-mt-24 bg-manga-black text-manga-white p-12 md:p-20 text-center fade-in-up rounded-lg"
+      >
+        <h2 class="font-heading text-3xl md:text-4xl font-extrabold mb-4">
+          Interested in Collaborating?
+        </h2>
+        <p class="text-lg text-gray-300 mb-8 max-w-lg mx-auto">
+          I’m always open to discussing projects, collaboration opportunities,
+          or just exchanging ideas. Feel free to get in touch!
+        </p>
+        <a
+          href="mailto:emailanda@example.com"
+          class="inline-block bg-transparant border-white text-manga-white px-10 py-4 font-bold border-2 border-manga-accent hover:bg-manga-black hover:text-white transition duration-300 transform hover:scale-105"
+        >
+          SEND EMAIL ✉️
+        </a>
+        <div class="mt-10 flex justify-center space-x-6">
+          <a
+            href="https://github.com/rahmathidayatlubis"
+            target="_blank"
+            class="text-gray-400 hover:text-manga-white transition"
+          >
+            <svg
+              class="w-8 h-8"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.378.201 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.523 2 12 2z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/rahmat-hidayat-lubis-88275a281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            target="_blank"
+            class="text-gray-400 hover:text-manga-white transition"
+          >
+            <svg
+              class="w-8 h-8"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+              />
+            </svg>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="text-center py-8 border-t border-gray-300 text-sm text-gray-500"
+    >
+      <p>
+        &copy; 2025 [Rahmat Hidayat Lubis]. Dirancang & Dibuat dengan antusias.
+      </p>
+      <p>Dibangun dengan HTML5, Tailwind CSS, dan sedikit sentuhan manga.</p>
+    </footer>
+
+    <script>
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".fade-in-up").forEach((el) => {
+        observer.observe(el);
+      });
+
+      document.querySelectorAll("#projects .group").forEach((el) => {
+        el.classList.add("fade-in-up");
+        observer.observe(el);
+      });
+
+      document.querySelectorAll("#skills .border").forEach((el) => {
+        el.classList.add("fade-in-up");
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>
