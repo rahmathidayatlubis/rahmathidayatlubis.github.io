@@ -39,20 +39,20 @@ Saat ini, saya juga memiliki visi jangka panjang untuk mencapai kebebasan finans
 
 Berikut beberapa proyek yang telah saya kerjakan:
 
-| Judul Proyek                      | Deskripsi Singkat                                                              | Teknologi          |
-| --------------------------------- | ------------------------------------------------------------------------------ | ------------------ |
-| **Decision Support System (SAW)** | Sistem perekrutan PMB berbasis metode Simple Additive Weighting                | PHP, MySQL         |
-| **Quiz Ranking System (Borda)**   | Sistem perangkingan lomba cerdas cermat dengan juri multi-level (metode Borda) | CodeIgniter, MySQL |
-| **Student Achievement Tracker**   | Sistem pencatatan dan pelaporan prestasi mahasiswa                             | Laravel, MySQL     |
-| **Customer Mapping**              | Pemetaan pelanggan menggunakan koordinat dan Leaflet.js                        | PHP, Leaflet.js    |
-| **Scout Unit Mapping**            | Pemetaan gugus depan Pramuka dengan integrasi spasial                          | Leaflet.js, PHP    |
-| **ERP for Grocery Store**         | Sistem pengelolaan stok, pembelian, dan laporan toko sembako                   | Laravel, MySQL     |
-| **E-SCM for Bathub Factory**      | Sistem manajemen rantai pasok digital untuk pabrik bathub                      | PHP, MySQL         |
-| **Online Clothing Store**         | Website toko baju dengan fitur checkout dan admin panel                        | Laravel, Bootstrap |
-| **Mobile Shop Website**           | Website penjualan ponsel berbasis e-commerce                                   | CodeIgniter, MySQL |
-| **Bakery Website**                | Sistem penjualan roti online dan manajemen pemesanan                           | PHP, HTML/CSS      |
-| **Guest Invitation System**       | Sistem manajemen tamu dengan check-in digital dan QR code                      | Laravel, QR Code   |
-| **PDAM Complaint System**         | Sistem pengaduan pelanggan untuk perusahaan air minum daerah (PDAM)            | PHP, MySQL         |
+| Judul Proyek                      | Deskripsi Singkat                                                              | Teknologi               |
+| --------------------------------- | ------------------------------------------------------------------------------ | ----------------------- |
+| **Decision Support System (SAW)** | Sistem perekrutan PMB berbasis metode Simple Additive Weighting                | PHP, MySQL              |
+| **Quiz Ranking System (Borda)**   | Sistem perangkingan lomba cerdas cermat dengan juri multi-level (metode Borda) | PHP, MySQL              |
+| **Student Achievement Tracker**   | Sistem pencatatan dan pelaporan prestasi mahasiswa                             | CodeIgniter, MySQL      |
+| **Customer Mapping**              | Pemetaan pelanggan menggunakan koordinat dan Leaflet.js                        | CodeIgniter, Leaflet.js |
+| **Scout Unit Mapping**            | Pemetaan gugus depan Pramuka dengan integrasi spasial                          | Leaflet.js, CodeIgniter |
+| **ERP for Grocery Store**         | Sistem pengelolaan stok, pembelian, dan laporan toko sembako                   | CodeIgniter, MySQL      |
+| **E-SCM for Bathub Factory**      | Sistem manajemen rantai pasok digital untuk pabrik bathub                      | CodeIgniter, MySQL      |
+| **Online Clothing Store**         | Website toko baju dengan fitur checkout dan admin panel                        | CodeIgniter, Bootstrap  |
+| **Mobile Shop Website**           | Website penjualan ponsel berbasis e-commerce                                   | CodeIgniter, MySQL      |
+| **Bakery Website**                | Sistem penjualan roti online dan manajemen pemesanan                           | CodeIgniter, HTML/CSS   |
+| **Guest Invitation System**       | Sistem manajemen tamu dengan check-in digital dan QR code                      | CodeIgniter, QR Code    |
+| **PDAM Complaint System**         | Sistem pengaduan pelanggan untuk perusahaan air minum daerah (PDAM)            | CodeIgniter, MySQL      |
 
 ---
 
